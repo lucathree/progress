@@ -59,7 +59,10 @@ ROOT_URLCONF = 'progress.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'progress/templates/')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'progress/templates/'),
+            os.path.join(BASE_DIR, 'progress/backbone/templates/'),
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,7 +125,7 @@ USE_TZ = True
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'progress/static/')
-STATIC_URL = '/static'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
